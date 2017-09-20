@@ -54,3 +54,6 @@ xu.getName.prototype.c = function(){
     return  5; 
 };
 console.log(b.c());
+
+
+
