@@ -19,8 +19,6 @@ console.log(`typeof Function.prototype.__proto__  -- ${typeof Function.prototype
 console.log(`Object.prototype.__proto__ ===  Object.prototype  --  ${Object.prototype.__proto__ ===  Object.prototype}`);
 console.log(`Object.prototype.__proto__ ===  null  --  ${Object.prototype.__proto__ ===  null}`);
 
-
-
 var bike = function(){
 
 }
@@ -36,6 +34,3 @@ bike.prototype = car;
 console.log(`typeof car.prototype -- ${typeof car.prototype}`);
 console.log(`typeof car.__proto__ -- ${typeof car.__proto__}`);
 console.log(`typeof car.__proto__.__proto__ -- ${typeof car.__proto__.__proto__}`);
-
-
-
