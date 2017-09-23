@@ -20,7 +20,7 @@ console.log('---------4 : difference------------')//输出第一个数组中，�
 console.log(_.difference([2,1], [2,3]));
 
 console.log('---------5 : differenceBy----------')//输出俩个数组不相等的值
-console.log(_.differenceBy([2.1, 1.2], [2.3, 3.4],Math.floor));
+console.log(_.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
 console.log(_.differenceBy([{'x' : 2}, {'x' : 1}], [{'x' : 1}], 'x'));
 
 var objects = [{'x' : 1, 'y' : 2},{'x' : 2, 'y' : 1}];
@@ -145,11 +145,31 @@ console.log(_.nth(array, -2))
 var array = ['a', 'b', 'c', 'a', 'b', 'c'];
 console.log('-------28 : pull------------')//删除给定的数组元素
 console.log(_.pull(array, 'a', 'c'))
+console.log(_.pullAll(array, ['a', 'c']))
 
 var array = ['a', 'b', 'c', 'a', 'b', 'c'];
 console.log('-------29 : pullAll----------')//删除给定的数组元素，给定的参数为一个数组
 console.log(_.pullAll(array, ['a', 'c']))
+console.log(_.pullAll(array, 'a', 'c'))
 
 var array = [{'x' : 1}, {'x' : 2}, {'x' : 3}, {'x' : 1}];
 console.log('-------30 : pullAllBy---------')//迭代比较是否相等，返回不相等的数组
 console.log(_.pullAllBy(array, [{'x' : 1}, {'x' : 3}], 'x'))
+
+var array = [{'x' : 1, 'y' : 2}, {'x' : 3, 'y' : 4}, {'x' : 5, 'y' : 6}];
+console.log('-------31 : pullAllWith-------')//进行数组间的比较，留下不相等的部分
+console.log(_.pullAllWith(array, [{'x' : 3, 'y' : 4}], _.isEqual))
+
+var array = ['a', 'b', 'c', 'd'];
+var pulled = _.pullAt(array, [1, 3]);
+console.log('-------32 : pullAt------------')//返回的数组为删除的数组元素
+console.log(array)
+console.log(pulled)
+
+var array = [1, 2, 3, 4];
+var evens = _.remove(array, function(n){
+    return n % 2 == 0;
+});
+console.log('--------33 : remove----------')//从数组中删除谓词返回truthy的所有元素，并返回已删除元素的数组。
+console.log(array);
+console.log(evens);
