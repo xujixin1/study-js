@@ -182,3 +182,29 @@ console.log(array);
 var array = [1, 2, 3, 4, 5];
 console.log('-------35 : slice-----------')//返回一个数组，从给定位置开始，结束位置为给定位置的前一个
 console.log(_.slice(array, 1, 3))
+
+console.log('-------36 : sortedIndex-------')//使用二进制搜索来确定将值插入数组的最低索引，以维持其排序顺序。
+console.log(_.sortedIndex([30, 50], 40))
+console.log(_.sortedIndex([30, 40, 50], 60))
+
+var objects = [{ 'x': 4 }, { 'x': 5 }];
+console.log('-------37 : sortedIndexBy---------')//返回数组中匹配的特定值得位置
+console.log(_.sortedIndexBy(objects, { 'x': 4 }, function(o) { return o.x; }));
+console.log(_.sortedIndexBy(objects, { 'x': 4 }, 'x'));
+
+console.log('-------38 : sortedIndexOf---------')//返回匹配元素在数组中的第一个位置
+console.log(_.sortedIndexOf([4, 5, 5, 5, 6], 5));
+console.log(_.sortedIndexOf([1, 2, 3, 3, 4], 3));
+
+console.log('------39 : sortedLastIndex--------')//返回元素插入数组中的最后位置
+console.log(_.sortedLastIndex([4, 5, 5, 5, 6], 5))
+console.log(_.sortedLastIndex([1, 2, 2, 2, 3], 2))
+console.log(_.sortedLastIndex([1, 2, 2, 2, 3], 4))
+
+var objects = [{ 'x': 4 }, { 'x': 5 }];
+console.log('------40 : sortedLastIndexBy--------')//返回所给参数应该插入到数组中的最后位置
+console.log(_.sortedLastIndexBy(objects, { 'x': 4 }, function(o) { return o.x; }))
+console.log(_.sortedLastIndexBy(objects, { 'x': 4 }, 'x'))
+
+console.log('------41 : sortedLastIndexOf---------')//返回所匹配元素在数组中最后的位置
+console.log(_.sortedLastIndexOf([4, 5, 5, 5, 6], 5))
