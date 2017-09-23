@@ -173,3 +173,12 @@ var evens = _.remove(array, function(n){
 console.log('--------33 : remove----------')//从数组中删除谓词返回truthy的所有元素，并返回已删除元素的数组。
 console.log(array);
 console.log(evens);
+
+var array = [1, 2, 3];
+console.log('-------34 : reverse----------')//反转数组，使第一个元素变为最后一个元素，第二个元素变成第二个元素，以此类推。
+console.log(_.reverse(array));
+console.log(array);
+
+var array = [1, 2, 3, 4, 5];
+console.log('-------35 : slice-----------')//返回一个数组，从给定位置开始，结束位置为给定位置的前一个
+console.log(_.slice(array, 1, 3))
