@@ -208,3 +208,26 @@ console.log(_.sortedLastIndexBy(objects, { 'x': 4 }, 'x'))
 
 console.log('------41 : sortedLastIndexOf---------')//返回所匹配元素在数组中最后的位置
 console.log(_.sortedLastIndexOf([4, 5, 5, 5, 6], 5))
+
+console.log('------42 : sortedUniq-------')//返回删除重复元素后的数组
+console.log(_.sortedUniq([1, 1, 2]))
+console.log(_.sortedUniq([1, 1, 2, 2, 3]))
+
+console.log('------43 : sortedUniqBy------')
+console.log(_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor))
+
+console.log('------44 : tail--------')//返回删除了第一个元素的数组
+console.log(_.tail([1, 2, 3]))
+console.log(_.tail([2, 3]))
+
+console.log('------45 : take--------')//从数组的第一个元素开始，返回给定个数的数组
+console.log(_.take([1, 2, 3]));
+console.log(_.take([1, 2, 3], 2));
+console.log(_.take([1, 2, 3], 5));
+console.log(_.take([1, 2, 3], 0));
+
+console.log('-----46 : takeRight------')
+console.log(_.takeRight([1, 2, 3]))
+console.log(_.takeRight([1, 2, 3], 2))
+console.log(_.takeRight([1, 2, 3], 5))
+console.log(_.takeRight([1, 2, 3], 0))
