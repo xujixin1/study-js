@@ -226,8 +226,46 @@ console.log(_.take([1, 2, 3], 2));
 console.log(_.take([1, 2, 3], 5));
 console.log(_.take([1, 2, 3], 0));
 
-console.log('-----46 : takeRight------')
+console.log('-----46 : takeRight------')//从数组的最后一个元素开始，返回给定个数的数组
 console.log(_.takeRight([1, 2, 3]))
 console.log(_.takeRight([1, 2, 3], 2))
 console.log(_.takeRight([1, 2, 3], 5))
 console.log(_.takeRight([1, 2, 3], 0))
+
+var users = [
+    { 'user': 'barney',  'active': true },
+    { 'user': 'fred',    'active': false },
+    { 'user': 'pebbles', 'active': false }
+  ];
+console.log('------47 : takeRightWhile------')//创建从末端提取的元素的数组。元素被采用，直到谓词返回falsey。
+console.log(_.takeRightWhile(users, function(o) { return !o.active; }))
+console.log(_.takeRightWhile(users, { 'user': 'pebbles', 'active': false }))
+console.log(_.takeRightWhile(users, ['active', false]))
+console.log(_.takeRightWhile(users, 'active'))
+
+var users = [
+    { 'user': 'barney',  'active': false },
+    { 'user': 'fred',    'active': false },
+    { 'user': 'pebbles', 'active': true }
+  ];
+
+console.log('-----------48 : takeWhile-----------')//创建从一开始就提取的元素的数组。元素被采用，直到谓词返回falsey。
+console.log(_.takeWhile(users, function(o) { return !o.active; }))
+console.log(_.takeWhile(users, { 'user': 'barney', 'active': false }))
+console.log(_.takeWhile(users, ['active', false]))
+console.log(_.takeWhile(users, 'active'))
+
+console.log('-----------49 : union------------')//俩个数组相比较，第一个数组中的元素全部返回，第二个数组中返回和第一个数组不相等的元素
+console.log(_.union([2], [1, 2]))
+console.log(_.union([2], [1, 2, 3]))
+console.log(_.union([3], [1, 2, 3]))
+console.log(_.union([2, 3], [1, 2, 3]))
+
+console.log('-----------50 : unionBy----------')
+console.log(_.unionBy([2.1], [1.2, 2.3], Math.floor))
+console.log(_.unionBy([{'x' : 1}], [{'x' : 2}, {'x': 1}], 'x'))
+
+var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
+var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
+console.log('-----------51 : unionWith---------')
+console.log(_.unionWith(objects, others, _.isEqual))
