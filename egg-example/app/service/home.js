@@ -34,7 +34,7 @@ module.exports = app => {
       const a = new Date();
       return `${a.getFullYear()}-${this.format(a.getMonth() + 1)}-${this.format(a.getDate())} ${this.format(a.getHours())}:${this.format(a.getMinutes())}:${this.format(a.getSeconds())}`;
     }
-    format(b) { 
+    format(b) {
       if (b < 10) {
         return '0' + b;
       }
