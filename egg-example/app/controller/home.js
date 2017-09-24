@@ -14,8 +14,7 @@ module.exports = app => {
       this.ctx.body = a;
     }
     * baidu() {
-      const b = yield this.service.home.sohu();
-      this.ctx.body = b;
+      this.ctx.body = this.ctx.helper.foo(this.ctx.request.query.a, this.ctx.request.query.c);
     }
     * test() {
       const c = yield this.service.home.test();
@@ -42,6 +41,15 @@ module.exports = app => {
         headers: result.headers,
         package: result.data,
       };
+    }
+    * bike() {
+      this.ctx.body = this.ctx.helper.bike(this.ctx.request.query.b);
+    }
+    * age() {
+      this.ctx.body = this.ctx.helper.age('age(1)');
+    }
+    * date() {
+      this.ctx.body = yield this.service.home.date();
     }
   }
   return HomeController;
