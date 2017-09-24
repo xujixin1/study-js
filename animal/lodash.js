@@ -269,3 +269,24 @@ var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
 console.log('-----------51 : unionWith---------')
 console.log(_.unionWith(objects, others, _.isEqual))
+
+console.log('-----------52 : uniq-------------')
+console.log(_.uniq([2, 1, 2]))
+
+console.log('-----------53 : uniqBy-----------')
+console.log(_.uniqBy([2.1, 1.2, 2.3], Math.floor))
+console.log(_.uniqBy([{'x' : 1}, {'x' : 2}, {'x' : 1}], 'x'))
+
+var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }];
+console.log('-----------54 : uniqWith----------')
+console.log(_.uniqWith(objects, _.isEqual))
+
+var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+console.log('------------55 : unzip-------------')
+console.log(_.unzip(zipped))
+console.log(zipped)
+
+var zipped = _.zip([1, 2], [10, 20], [100, 200]);
+console.log('------------56 : unzipWith----------')
+console.log(_.unzipWith(zipped, _.add))
+ 
