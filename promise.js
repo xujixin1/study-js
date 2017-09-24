@@ -21,7 +21,6 @@ asyncFunction().then(function (value) {
   }).then(function(v){
     console.log(`3-${v.value} - ${v.age}`);
     console.log(a);
-    //return value, 2;
   }).catch(function (error) { 
     console.log(`catch-${error}`);
     return 'hello';
