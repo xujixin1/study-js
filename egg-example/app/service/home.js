@@ -32,7 +32,13 @@ module.exports = app => {
     }
     * date() {
       const a = new Date();
-      return `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}:${a.getSeconds()}`;
+      return `${a.getFullYear()}-${this.format(a.getMonth() + 1)}-${this.format(a.getDate())} ${this.format(a.getHours())}:${this.format(a.getMinutes())}:${this.format(a.getSeconds())}`;
+    }
+    format(b) { 
+      if (b < 10) {
+        return '0' + b;
+      }
+      return b;
     }
   }
   return Home;
