@@ -31,9 +31,6 @@ module.exports = app => {
       ];
       return `${_.find(users, function(o) { return o.age < 40; })}-${_.find(users, { age: 1, active: true })}-${_.find(users, [ 'active', false ])}-${_.find(users, 'active')}`;
     }
-    * findLast() {
-      
-    }
   }
   return Lodash;
 };
