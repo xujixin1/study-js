@@ -261,32 +261,68 @@ console.log(_.union([2], [1, 2, 3]))
 console.log(_.union([3], [1, 2, 3]))
 console.log(_.union([2, 3], [1, 2, 3]))
 
-console.log('-----------50 : unionBy----------')
+console.log('-----------50 : unionBy----------')//俩个数组相比较，第一个数组中的元素全部返回，第二个数组中返回和第一个数组不相等的元素
 console.log(_.unionBy([2.1], [1.2, 2.3], Math.floor))
 console.log(_.unionBy([{'x' : 1}], [{'x' : 2}, {'x': 1}], 'x'))
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
-console.log('-----------51 : unionWith---------')
+console.log('-----------51 : unionWith---------')//比较两个数组，返回他们不相等的元素重新组合成新的数组
 console.log(_.unionWith(objects, others, _.isEqual))
 
-console.log('-----------52 : uniq-------------')
+console.log('-----------52 : uniq-------------')//返回数组元素中不相等的元素
 console.log(_.uniq([2, 1, 2]))
+console.log(_.uniq([1, 2, 2, 3, 3, 4]))
 
-console.log('-----------53 : uniqBy-----------')
+console.log('-----------53 : uniqBy-----------')//返回数组元素中不相等的元素
 console.log(_.uniqBy([2.1, 1.2, 2.3], Math.floor))
 console.log(_.uniqBy([{'x' : 1}, {'x' : 2}, {'x' : 1}], 'x'))
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }];
-console.log('-----------54 : uniqWith----------')
+console.log('-----------54 : uniqWith----------')//对数组进行比较，相等的元素只返回一个
 console.log(_.uniqWith(objects, _.isEqual))
 
 var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
-console.log('------------55 : unzip-------------')
+console.log('------------55 : unzip-------------')//对组合后的数组进行拆分
 console.log(_.unzip(zipped))
 console.log(zipped)
 
 var zipped = _.zip([1, 2], [10, 20], [100, 200]);
-console.log('------------56 : unzipWith----------')
+console.log('------------56 : unzipWith----------')//按给定的方式进行分组
 console.log(_.unzipWith(zipped, _.add))
+console.log(_.unzipWith(zipped))
+console.log(_.unzipWith(zipped, _.subtract))
+
+console.log('------------57 : without------------')//返回排除指定元素的数组
+console.log(_.without([2, 1, 2, 3], 1, 2))
+console.log(_.without([1, 2, 2, 3], 2))
+
+console.log('-------------58 : xor----------------')//返回数组中相互不重复的元素
+console.log(_.xor([2, 1], [2, 3]))
+console.log(_.xor([1, 2, 3], [2, 4, 5], [2, 6, 7]))
+console.log(_.xor([1, 2, 3], [2, 3, 4], [2, 5, 6]))
+
+console.log('------------59 : xorBy--------------')//同xor
+console.log(_.xorBy([2.1, 1.2], [2.3, 3.4], Math.floor))
+console.log(_.xorBy([{'x' : 1}], [{'x' : 2}, {'x' : 1}], 'x'))
  
+var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
+var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
+console.log('------------60 : xorWith------------')//同xor
+console.log(_.xorWith(objects, others, _.isEqual))
+
+console.log('------------61 : zip---------------')//每个数组选出一个元素进行重新组合
+console.log(_.zip(['a', 'b'], [1, 2], [true, false]))
+console.log(_.zip(['a', 'b', 'c'], [1, 2]))
+
+console.log('------------62 : zipObject---------')//返回新的对象，每个变量有一个属性标识符和相应的值
+console.log(_.zipObject(['a', 'b'], [1, 2]))
+console.log(_.zipObject(['a', 'b', 'c'], [1, 2, 3]))
+
+console.log('------------63 : zipObjectDeep----------')
+console.log(_.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]))
+
+console.log('------------64 : zipWith-------------')//返回重新组合的数组
+console.log(_.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c){
+    return a + b + c;
+}))
