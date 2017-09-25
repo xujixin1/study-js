@@ -74,7 +74,7 @@ console.log(a)
 */
 
 
-console.log('--------利用空对象---------')
+/*console.log('--------利用空对象---------')
 
 function Animal() {
     this.species = 'animal';
@@ -91,7 +91,7 @@ F.prototype = Animal.prototype;
 Cat.prototype = new F();
 Cat.prototype.constructor = Cat;
 
-console.log(F)
+console.log(F)*/
 
 
 console.log('---------拷贝继承------------')
@@ -123,7 +123,7 @@ function object(o) {
     return new F();
 }
 
-console.log('--------浅拷贝-----------')
+console.log('--------浅拷贝-----------')// 拷贝了p的内容，指针指向地址与p指向地址为同一个内存小格
 
 function extendCopy(p) {
     var c = {};
@@ -136,7 +136,7 @@ function extendCopy(p) {
     return c;
   }
 
-console.log('--------深拷贝----------')
+console.log('--------深拷贝----------')//拷贝时拷贝了内容，同时指向了一个新的内存小格，互不影响
 
 function deepCopy(p, c) {
     var c = c || {};
