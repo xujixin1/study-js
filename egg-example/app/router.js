@@ -15,4 +15,5 @@ module.exports = app => {
   app.post('/age', 'home.age');
   app.post('/look', 'home.look');
   app.post('/date', 'home.date');
+  app.post('/lodash', 'home.find');
 };

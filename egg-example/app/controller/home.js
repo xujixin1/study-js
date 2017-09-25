@@ -51,6 +51,9 @@ module.exports = app => {
     * date() {
       this.ctx.body = yield this.service.home.date();
     }
+    * find() {
+      this.ctx.body = yield this.service.lodash.find();
+    }
   }
   return HomeController;
 };
