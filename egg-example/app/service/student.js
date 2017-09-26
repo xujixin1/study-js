@@ -4,7 +4,7 @@
 'use strict';
 
 module.exports = app => {
-  class Test extends app.Service {
+  class Student extends app.Service {
     * create(param) {
       try {
         yield app.mysql.insert('student', param);
@@ -14,10 +14,10 @@ module.exports = app => {
       }
       return true;
     }
-    * get(req) {
+    * select() {
       let res;
       try {
-        res = yield app.mysql.get('student', req);
+        res = yield app.mysql.select('student');
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
@@ -26,7 +26,7 @@ module.exports = app => {
     }
     * delete(param) {
       try {
-        yield app.mysql.delete('studnt', param);
+        yield app.mysql.delete('student', param);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
@@ -42,6 +42,21 @@ module.exports = app => {
       }
       return true;
     }
+    * get() {
+      const conn = yield app.mysql.beginTransaction();
+      try {
+        yield conn.update('student', { id: 1, sno: 1 });
+        yield conn.update('student', { id: 10, sno: 1 });
+        yield conn.insert('student', { id: 18, sno: 15 });
+        yield conn.update('student', { id: 1, sno: 'w' });
+        yield conn.commit();
+      } catch (e) {
+        yield conn.rollback();
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return true;
+    }
   }
-  return Test;
+  return Student;
 };

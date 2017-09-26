@@ -11,11 +11,14 @@ module.exports = app => {
     * delete() {
       this.ctx.body = yield this.service.student.delete(this.ctx.request.body);
     }
-    * get() {
-      this.ctx.body = yield this.service.student.get(this.ctx.request.body);
+    * select() {
+      this.ctx.body = yield this.service.student.select();
     }
     * update() {
       this.ctx.body = yield this.service.student.update(this.ctx.request.body);
+    }
+    * get() {
+      this.ctx.body = yield this.service.student.get();
     }
   }
   return TestController;
