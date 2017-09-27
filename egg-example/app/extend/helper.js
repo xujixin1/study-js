@@ -3,6 +3,9 @@
  */
 'use strict';
 
+const knex = require('knex')({
+  client: 'mysql',
+});
 module.exports = {
   foo(a, b) {
     return a * 1 + b * 1;
@@ -12,5 +15,11 @@ module.exports = {
   },
   age() {
     return '123';
+  },
+  * unique(app, table, column) {
+    const schema = knex.schema.alterTable(table, function(t) {
+      t.unique(column);
+    });
+    yield app.mysql.query(schema.toString());
   },
 };

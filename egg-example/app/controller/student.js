@@ -4,7 +4,7 @@
 'use strict';
 
 module.exports = app => {
-  class TestController extends app.Controller {
+  class StudentController extends app.Controller {
     * create() {
       this.ctx.body = yield this.service.student.create(this.ctx.request.body);
     }
@@ -21,5 +21,5 @@ module.exports = app => {
       this.ctx.body = yield this.service.student.get();
     }
   }
-  return TestController;
+  return StudentController;
 };

@@ -9,6 +9,7 @@ const knex = require('knex')({
 
 module.exports = app => {
   app.beforeStart(function* () {
+    const ctx = app.createAnonymousContext();
     const hasUser = yield app.mysql.query(knex.schema.hasTable('user').toString());
     if (hasUser.length === 0) {
       const userSchema = knex.schema.createTableIfNotExists('user', function(table) {
@@ -19,10 +20,8 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
-      const a = knex.schema.alterTable('user', function(t) {
-        t.unique('name');
-      });
-      yield app.mysql.query(a.toString());
+
+      yield ctx.helper.unique(app, 'user', 'name');
     }
     const hasStudent = yield app.mysql.query(knex.schema.hasTable('student').toString());
     if (hasStudent.length === 0) {
@@ -36,10 +35,9 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(studentSchema.toString());
-      const b = knex.schema.alterTable('student', function(t) {
-        t.unique('sno', 'name');
-      });
-      yield app.mysql.query(b.toString());
+
+      yield ctx.helper.unique(app, 'student', 'sno');
+      yield ctx.helper.unique(app, 'student', 'name');
     }
     const hasTeacher = yield app.mysql.query(knex.schema.hasTable('teacher').toString());
     if (hasTeacher.length === 0) {
@@ -52,11 +50,9 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(teacherSchema.toString());
-      const c = knex.schema.alterTable('teacher', function(t) {
-        t.unique('name');
-        t.unique('tno');
-      });
-      yield app.mysql.query(c.toString());
+
+      yield ctx.helper.unique(app, 'teacher', 'tno');
+      yield ctx.helper.unique(app, 'teacher', 'name');
     }
   });
 };
