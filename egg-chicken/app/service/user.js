@@ -1,32 +1,22 @@
 /**
- * 2017-9-27 Xu Jixin
+ * 2017-9-29 Xu Jixin
  */
 'use strict';
 
 module.exports = app => {
-  class Teacher extends app.Service {
+  class User extends app.Service {
     * create(param) {
       try {
-        yield app.mysql.insert('teacher', param);
+        yield app.mysql.insert('user', param);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
       return true;
     }
-    * select() {
-      let res;
-      try {
-        res = yield app.mysql.select('teacher');
-      } catch (e) {
-        this.ctx.logger.error(e);
-        return false;
-      }
-      return res;
-    }
     * delete(param) {
       try {
-        yield app.mysql.delete('teacher', param);
+        yield app.mysql.delete('user', param);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
@@ -35,13 +25,23 @@ module.exports = app => {
     }
     * update(param) {
       try {
-        yield app.mysql.update('teacher', param);
+        yield app.mysql.update('user', param);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
       return true;
     }
+    * get() {
+      let res;
+      try {
+        yield app.mysql.get('user');
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return res;
+    }
   }
-  return Teacher;
+  return User;
 };
