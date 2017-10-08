@@ -5,42 +5,41 @@
 
 module.exports = app => {
   class User extends app.Service {
-    * create(param) {
+    * register() {
       try {
-        yield app.mysql.insert('user', param);
+        yield app.mysql.insert('user');
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
       return true;
     }
-    * delete(param) {
+    * login(wechat) {
       try {
-        yield app.mysql.delete('user', param);
+        yield app.mysql.create('user', wechat);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
       return true;
     }
-    * update(param) {
+    * set(mobile) {
       try {
-        yield app.mysql.update('user', param);
+        yield app.mysql.set('user', mobile);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
       return true;
     }
-    * get() {
-      let res;
+    * update(mobile) {
       try {
-        yield app.mysql.get('user');
+        yield app.mysql.update('user', mobile);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
-      return res;
+      return true;
     }
   }
   return User;
