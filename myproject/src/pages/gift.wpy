@@ -1,0 +1,134 @@
+<style lang="less">
+.bind {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 150px;
+}
+
+.test {
+    display: flex;
+    font-size: 15px;
+    weight: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 100px;
+}
+
+.icon {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.line {
+    height: 1px;
+    width: 70px;
+    background-color: black;
+}
+    
+.best {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: peachpuff;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.find {
+    display: flex;
+    justify-content: center;
+    margin: 120px;
+}
+</style>
+<template>
+    <view>
+        <view class="container">
+            <text>简单2步，选中心动好礼</text>
+        </view>
+
+        <view class="test">
+            <view class="icon">
+                <icon type="serch"></icon>
+            </view>
+            <view class="line"></view>
+            <view class="icon">
+                <icon type="serch"></icon>
+            </view>
+            <view class="line"></view>
+            <view class="icon">
+                <icon type="serch"></icon>
+            </view>
+        </view>
+
+        <view class="test">
+            <text>送给TA</text>
+            <text>TA喜欢的</text>
+            <text>完成</text>
+        </view>
+
+        <view class="bind">
+            <text>送她</text>
+            <text>送他</text>
+        </view>
+
+        <view class="row">
+            <view class="best center">
+                <text>自己</text>
+            </view>
+            <view class="best center">
+                <text>老婆/女票</text>
+            </view>
+            <view class="best center">
+                <text>姐妹/闺蜜</text>
+            </view>
+        </view>
+
+        <view class="row">
+            <view class="best center">
+                <text>妈妈</text>
+            </view>
+            <view class="best center">
+                <text>长辈</text>
+            </view>
+            <view class="best center">
+                <text>同事</text>
+            </view>
+        </view>
+
+        <view class = "find">
+            <text>先跳过，随便逛逛</text>
+        </view>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '礼物说'
+  }
+  data = {
+  }
+  methods = {
+    onLoad() { }
+  }
+}
+</script>
