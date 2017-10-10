@@ -1,59 +1,64 @@
 
-    <view>
-        <view class="container">
-            <text>简单2步，选中心动好礼</text>
-        </view>
-
-        <view class="test">
-            <view class="icon">
-                <icon type="serch"/>
-            </view>
-            <view class="line"/>
-            <view class="icon">
-                <icon type="serch"/>
-            </view>
-            <view class="line"/>
-            <view class="icon">
-                <icon type="serch"/>
-            </view>
-        </view>
-
-        <view class="test">
-            <text>送给TA</text>
-            <text>TA喜欢的</text>
-            <text>完成</text>
-        </view>
-
-        <view class="bind">
-            <text>送她</text>
-            <text>送他</text>
-        </view>
-
-        <view class="row">
-            <view class="best center">
-                <text>自己</text>
-            </view>
-            <view class="best center">
-                <text>老婆/女票</text>
-            </view>
-            <view class="best center">
-                <text>姐妹/闺蜜</text>
-            </view>
-        </view>
-
-        <view class="row">
-            <view class="best center">
-                <text>妈妈</text>
-            </view>
-            <view class="best center">
-                <text>长辈</text>
-            </view>
-            <view class="best center">
-                <text>同事</text>
-            </view>
-        </view>
-
-        <view class="find">
-            <text>先跳过，随便逛逛</text>
-        </view>
+  <view>
+    <view class="container">
+      <text>简单2步，选中心动好礼</text>
     </view>
+
+    <view class="test">
+      <view class="icon">
+      <image class="both" src="{{person}}"/> 
+      </view>
+      <view class="line"/>
+      <view class="icon">
+      <image class="both" src="{{like}}"/> 
+      </view>
+      <view class="line"/>
+      <view class="icon">
+      <image class="both" src="{{finish}}"/>
+      </view> 
+    </view>
+
+    <view class="take">
+      <text class="row">送给TA</text>
+      <text claa="row">TA喜欢的</text>
+      <text claa="row">完成</text>
+    </view>
+
+    <view class="bind">
+      <text>送她</text>
+      <text>送他</text>
+    </view>
+
+    <view class="row and">
+      <view class="best center">
+        <image class="photo" src="{{camera}}"/> 
+        <text>自己</text>
+      </view>
+      <view class="best center">
+        <image class="photo" src="{{ring}}"/>
+        <text>老婆/女票</text>
+      </view>
+      <view class="best center">
+        <image class="photo" src="{{lipstick}}"/> 
+        <text>姐妹/闺蜜</text>
+      </view>
+    </view>
+    <view class="row and">
+      <view class="best center">
+        <image class="photo" src="{{flower}}"/> 
+        <text>妈妈</text>
+      </view>
+      <view class="best center">
+        <image class="photo" src="{{clothes}}"/> 
+        <text>长辈</text>
+      </view>
+      <view class="best center">
+        <image class="photo" src="{{wallet}}"/> 
+        <text>同事</text>
+      </view>
+    </view>
+
+    <view class="find view">
+      <text>先跳过，随便逛逛▶</text>
+    </view>
+</view>

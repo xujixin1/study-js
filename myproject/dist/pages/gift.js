@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _wepy = require('./../npm/wepy/lib/wepy.js');
 
 var _wepy2 = _interopRequireDefault(_wepy);
@@ -33,10 +35,24 @@ var Index = function (_wepy$page) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '礼物说'
-    }, _this.data = {}, _this.methods = {
-      onLoad: function onLoad() {}
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.data = {
+      src: '',
+      person: '../image/person.jpg',
+      like: '../image/礼物.png',
+      finish: '../image/对号.png',
+      camera: '../image/相机.png',
+      ring: '../image/戒指.png',
+      lipstick: '../image/口红.png',
+      flower: '../image/鲜花.png',
+      clothes: '../image/衣服.png',
+      wallet: '../image/钱包.png'
+    }, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
+
+  _createClass(Index, [{
+    key: 'onLoad',
+    value: function onLoad() {}
+  }]);
 
   return Index;
 }(_wepy2.default.page);
@@ -44,4 +60,4 @@ var Index = function (_wepy$page) {
 
 Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/gift'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdpZnQuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsIm1ldGhvZHMiLCJvbkxvYWQiLCJwYWdlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUNxQkEsSzs7Ozs7Ozs7Ozs7Ozs7b0xBQ25CQyxNLEdBQVM7QUFDUEMsOEJBQXdCO0FBRGpCLEssUUFHVEMsSSxHQUFPLEUsUUFFUEMsTyxHQUFVO0FBQ1JDLFlBRFEsb0JBQ0MsQ0FBRztBQURKLEs7Ozs7RUFOdUIsZUFBS0MsSTs7a0JBQW5CTixLIiwiZmlsZSI6ImdpZnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIHdlcHkucGFnZSB7XG4gIGNvbmZpZyA9IHtcbiAgICBuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0OiAn56S854mp6K+0J1xuICB9XG4gIGRhdGEgPSB7XG4gIH1cbiAgbWV0aG9kcyA9IHtcbiAgICBvbkxvYWQoKSB7IH1cbiAgfVxufVxuIl19
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdpZnQuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInNyYyIsInBlcnNvbiIsImxpa2UiLCJmaW5pc2giLCJjYW1lcmEiLCJyaW5nIiwibGlwc3RpY2siLCJmbG93ZXIiLCJjbG90aGVzIiwid2FsbGV0IiwibWV0aG9kcyIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBR1RDLEksR0FBTztBQUNMQyxXQUFLLEVBREE7QUFFTEMsY0FBUSxxQkFGSDtBQUdMQyxZQUFNLGlCQUhEO0FBSUxDLGNBQVEsaUJBSkg7QUFLTEMsY0FBUSxpQkFMSDtBQU1MQyxZQUFNLGlCQU5EO0FBT0xDLGdCQUFVLGlCQVBMO0FBUUxDLGNBQVEsaUJBUkg7QUFTTEMsZUFBUyxpQkFUSjtBQVVMQyxjQUFRO0FBVkgsSyxRQVlQQyxPLEdBQVUsRTs7Ozs7NkJBQ0QsQ0FBRzs7OztFQWpCcUIsZUFBS0MsSTs7a0JBQW5CZixLIiwiZmlsZSI6ImdpZnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIHdlcHkucGFnZSB7XG4gIGNvbmZpZyA9IHtcbiAgICBuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0OiAn56S854mp6K+0J1xuICB9XG4gIGRhdGEgPSB7XG4gICAgc3JjOiAnJyxcbiAgICBwZXJzb246ICcuLi9pbWFnZS9wZXJzb24uanBnJyxcbiAgICBsaWtlOiAnLi4vaW1hZ2Uv56S854mpLnBuZycsXG4gICAgZmluaXNoOiAnLi4vaW1hZ2Uv5a+55Y+3LnBuZycsXG4gICAgY2FtZXJhOiAnLi4vaW1hZ2Uv55u45py6LnBuZycsXG4gICAgcmluZzogJy4uL2ltYWdlL+aIkuaMhy5wbmcnLFxuICAgIGxpcHN0aWNrOiAnLi4vaW1hZ2Uv5Y+j57qiLnBuZycsXG4gICAgZmxvd2VyOiAnLi4vaW1hZ2Uv6bKc6IqxLnBuZycsXG4gICAgY2xvdGhlczogJy4uL2ltYWdlL+iho+acjS5wbmcnLFxuICAgIHdhbGxldDogJy4uL2ltYWdlL+mSseWMhS5wbmcnXG4gIH1cbiAgbWV0aG9kcyA9IHsgfVxuICBvbkxvYWQoKSB7IH1cbn1cbiJdfQ==
