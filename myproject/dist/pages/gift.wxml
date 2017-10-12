@@ -1,21 +1,22 @@
 
   <view>
+
     <view class="container">
       <text>简单2步，选中心动好礼</text>
     </view>
 
     <view class="test">
-      <view class="icon">
+      <!-- <view class="icon"> -->
       <image class="both" src="{{person}}"/> 
-      </view>
+      <!-- </view> -->
       <view class="line"/>
-      <view class="icon">
+      <!-- <view class="icon"> -->
       <image class="both" src="{{like}}"/> 
-      </view>
+      <!-- </view> -->
       <view class="line"/>
-      <view class="icon">
+      <!-- <view class="icon"> -->
       <image class="both" src="{{finish}}"/>
-      </view> 
+      <!-- </view>  -->
     </view>
 
     <view class="take">
@@ -25,8 +26,8 @@
     </view>
 
     <view class="bind">
-      <text>送她</text>
-      <text>送他</text>
+      <view bindtap="she" style="color:{{red}}; border-bottom: 3px solid {{solidred}}">送她</view>
+      <view bindtap="he" style="color:{{gray}}; border-bottom: 3px solid {{solidwhite}}">送他</view>
     </view>
 
     <view class="row and">
@@ -36,17 +37,18 @@
       </view>
       <view class="best center">
         <image class="photo" src="{{ring}}"/>
-        <text>老婆/女票</text>
+        <text>{{wife}}</text>
       </view>
       <view class="best center">
         <image class="photo" src="{{lipstick}}"/> 
-        <text>姐妹/闺蜜</text>
+        <text>{{sister}}</text>
       </view>
     </view>
+
     <view class="row and">
       <view class="best center">
         <image class="photo" src="{{flower}}"/> 
-        <text>妈妈</text>
+        <text>{{mum}}</text>
       </view>
       <view class="best center">
         <image class="photo" src="{{clothes}}"/> 
@@ -61,4 +63,5 @@
     <view class="find view">
       <text>先跳过，随便逛逛▶</text>
     </view>
+
 </view>
